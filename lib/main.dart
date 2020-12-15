@@ -60,10 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
         TabuleiroPeca tabuleiroPeca = new TabuleiroPeca();
         tabuleiroPeca.lIndex = i;
         tabuleiroPeca.cIndex = j;
-        if (i == 2 && j == 3) {
-          tabuleiroPeca.piece = Image.asset("assets/images/pecas/torre.png");
-        }
-        tabuleiroPeca.color = colorsTabuleiro[i][j];
+        if (colorsTabuleiro[i][j]['piece'] != null) tabuleiroPeca.piece = Image.asset(colorsTabuleiro[i][j]['piece']);
+        tabuleiroPeca.color = colorsTabuleiro[i][j]['color'];
         setState(() {
           listTabuleiroPeca.add(tabuleiroPeca);
         });
